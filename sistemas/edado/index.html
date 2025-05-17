@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Dado - Projeto App casual | Portfólio Gabriel Almeida Dias</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .project-hero {
+      background-color: #f8f9fa;
+      padding: 160px 0 80px;
+    }
+    
+    .project-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .project-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-color);
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .back-button i {
+      margin-right: 8px;
+    }
+    
+    .back-button:hover {
+      transform: translateX(-5px);
+    }
+    
+    .project-title {
+      margin-bottom: 20px;
+    }
+    
+    .project-title h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .project-title .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .project-title .tags span {
+      background-color: rgba(67, 97, 238, 0.1);
+      color: var(--primary-color);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .project-overview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    
+    .project-image-main {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      height: 400px;
+    }
+    
+    .project-image-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: #f8f9fa;
+    }
+    
+    .project-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    
+    .project-info p {
+      color: var(--gray-color);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .project-meta {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 25px;
+      box-shadow: var(--box-shadow);
+      margin-bottom: 30px;
+    }
+    
+    .meta-item {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    
+    .meta-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .meta-label {
+      min-width: 120px;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+    
+    .meta-value {
+      color: var(--gray-color);
+    }
+    
+    .external-link {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    
+    .external-link i {
+      margin-left: 8px;
+    }
+    
+    .external-link:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .project-gallery {
+      margin: 60px 0;
+    }
+    
+    .gallery-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      height: 250px;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: var(--transition);
+      background-color: #f8f9fa;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .project-details {
+      margin: 60px 0;
+    }
+    
+    .details-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .feature-icon {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-right: 15px;
+      padding-top: 5px;
+    }
+    
+    .feature-text h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .feature-text p {
+      color: var(--gray-color);
+      line-height: 1.6;
+    }
+    
+    .tech-stack {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 30px;
+      box-shadow: var(--box-shadow);
+    }
+    
+    .tech-stack h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    
+    .tech-item {
+      display: flex;
+      align-items: center;
+    }
+    
+    .tech-item i {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-right: 10px;
+    }
+    
+    @media (max-width: 992px) {
+      .project-overview {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .project-title h1 {
+        font-size: 2.5rem;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Estilos do modal para visualização de imagens */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      object-fit: contain;
+    }
+
+    #modalCaption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2001;
+    }
+
+    /* Adicionar cursor pointer nas imagens */
+    .gallery-item img, .project-image-main img {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Modal para visualização de imagens -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="modalCaption"></div>
+  </div>
+  
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">Meu Portfólio</div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#projetos" class="active">Projetos</a></li>
+          <li><a href="index.html#sobre">Sobre Mim</a></li>
+          <li><a href="index.html#habilidades">Habilidades</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <section class="project-hero">
+    <div class="project-container">
+      <div class="project-header">
+        <a href="../../index.html#projetos" class="back-button">
+          <i class="fas fa-arrow-left"></i> Voltar para Projetos
+        </a>
+      </div>
+      
+      <div class="project-title">
+        <h1>E-dado</h1>
+        <div class="tags">
+          <span>Flutter</span>
+          <span>Dart</span>
+          <span>Casual</span>
+          <span>App Mobile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-container">
+    <div class="project-overview">
+      <div class="project-image-main">
+        <img src="images/dice.png" alt="E-Dado App - Tela Principal">
+      </div>
+      
+      <div class="project-info">
+        <h2>Visão Geral</h2>
+        <p>
+          E-dado é um aplicativo móvel casual, desenvolvido em Flutter e Dart. O objetivo do projeto é criar um aplicativo que simule um lançamento de dados.
+        </p>
+        <p>
+          Desenvolvi esse projeto para auxiliar os usuários quando não disparem de dados reais para algum jogo de tabuleiro, RPG ou outros. Ele pode ser usado de forma bem variada tanto em número de dados ou dos valores de cada dado. Além disso possui histórico dos lançamentos feitos e somatório de cada jogada.
+        </p>
+        
+        <div class="project-meta">
+          <div class="meta-item">
+            <div class="meta-label">Cliente:</div>
+            <div class="meta-value">Projeto Pessoal</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Data:</div>
+            <div class="meta-value">Janeiro - Março 2023</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Plataformas:</div>
+            <div class="meta-value">Android & iOS</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Meu papel:</div>
+            <div class="meta-value">Designer de UI/UX & Desenvolvedor Full Stack</div>
+          </div>
+        </div>
+        
+        <a href="#" class="external-link" target="_blank">
+          Ver na Google Play <i class="fab fa-google-play"></i>
+        </a>
+      </div>
+    </div>
+    
+    <div class="project-gallery">
+      <h2 class="gallery-title">Galeria do Projeto</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/tela_inicial.png" alt="Tela Inicial do App" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+          <img src="images/historico_jogadas.png" alt="Histórico de Jogadas" onclick="openModal(this)">
+        </div>
+        <div class="gallery-item">
+          <img src="images/preferencias.png" alt="Preferências" onclick="openModal(this)">
+        </div>
+      </div>
+    </div>
+    
+    <div class="project-details">
+      <h2 class="details-title">Funcionalidades & Detalhes</h2>
+      
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-dice"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Rolagem de dados</h3>
+            <p>Faz a rolagem de dados ao clicar de um botão, tendo uma boa aleatoriedade dos números que vão sair.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-cog"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Configuração de dados</h3>
+            <p>Pode-se configurar a quantidade de dados a serem rolados, além do valor máximo dos dados. Também se pode configurar o tipo de valor que será mostrado.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-history"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Histórico de lançamentos</h3>
+            <p>Mostra o histórico de lançamentos feitos, com o somatório de cada jogada.</p>
+          </div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-sliders-h"></i>
+          </div>
+          <div class="feature-text">
+            <h3>Preferências</h3>
+            <p>Pode-se configurar se o lançar dos dados gerará algum som ou não.</p>
+          </div>
+        </div>
+        
+      </div>
+      
+      <div class="tech-stack">
+        <h3>Tecnologias Utilizadas</h3>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <i class="fas fa-mobile-alt"></i>
+            <span>Flutter</span>
+          </div>
+          <div class="tech-item">
+            <i class="fas fa-code"></i>
+            <span>Dart</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h2>Meu Portfólio</h2>
+        <p>Transformando ideias em projetos reais através de código e design.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="index.html#inicio">Início</a></li>
+          <li><a href="index.html#projetos">Projetos</a></li>
+          <li><a href="index.html#sobre">Sobre Mim</a></li>
+          <li><a href="index.html#habilidades">Habilidades</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Redes Sociais</h3>
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+  <script>
+    // Funcionalidade do modal para visualização de imagens
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    var captionText = document.getElementById("modalCaption");
+    var span = document.getElementsByClassName("close-modal")[0];
+    
+    // Função para abrir o modal
+    function openModal(img) {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+    }
+    
+    // Fechar clicando no X
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // Fechar clicando fora da imagem
+    modal.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html> 
