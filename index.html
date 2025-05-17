@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+      <h2>Meu Site</h2>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Página Inicial</a></li>
+          <li><a href="page2.html">Página Secundária</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+      <header>
+        <h1>Bem-vindo ao Meu Site!</h1>
+      </header>
+      <section>
+        <p>
+          Este é um exemplo de site estilizado. Ele conta com uma descrição inicial, 
+          seções verticais e um menu lateral para navegação. Edite conforme necessário.
+        </p>
+      </section>
+      <section>
+        <h2>Seção 1</h2>
+        <p>Conteúdo da Seção 1 com layout aprimorado.</p>
+      </section>
+      <section>
+        <h2>Seção 2</h2>
+        <p>Conteúdo da Seção 2 com layout aprimorado.</p>
+      </section>
+      <section class="carousel">
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel-container">
+                <img src="images/img1.jpg" alt="Imagem 1">
+                <img src="images/img2.jpg" alt="Imagem 2">
+                <img src="images/img3.jpg" alt="Imagem 3">
+            </div>
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+     </section>
+    </main>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 Meu Site. Contato: contato@meusite.com</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
